@@ -11,12 +11,12 @@ from selenium import webdriver
 
 import time
 # 启动phantomjs无界面浏览器
-browser=webdriver.PhantomJS()
+browser=webdriver.Chrome()
 # 打开qq空间登录界面
 browser.get('https://ui.ptlogin2.qq.com/cgi-bin/login?pt_hide_ad=1&style=9&pt_ttype=1&appid=549000929&pt_no_auth=1&pt_wxtest=1&daid=5&s_url=https%3A%2F%2Fh5.qzone.qq.com%2Fmqzone%2Findex')
 # 全屏截取
 browser.maximize_window()
-time.sleep(2)
+#time.sleep(2)
 # 确定打开了登录页面，保存截图
 browser.save_screenshot('qq1.png')
 # 切换至登录框架
@@ -32,7 +32,7 @@ browser.find_element_by_id('go').click()
 # 直接点击头像登录
 #browser.find_element_by_id('img_out_*********').click() # 此处*为qq密码
 # 保存屏幕快照
-time.sleep(10)
+#time.sleep(10)
 browser.save_screenshot('qq3.png')
 
 
