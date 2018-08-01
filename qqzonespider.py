@@ -22,12 +22,12 @@ time.sleep(2)
 # 确定打开了登录页面，保存截图
 browser.save_screenshot('qq1.png')
 # 切换至登录框架
-browser.switch_to.frame("login_frame")
+browser.switch_to.frame(0)
 # # 点击使用用户名和密码登录
 browser.find_element_by_id('switcher_plogin').click()
 # # 获取登录名和密码输入框的id，使用id获取元素并在对应输入框内输入登录信息
-browser.find_element_by_id('u').send_keys('1009330792')
-browser.find_element_by_id('p').send_keys('bingo8496982587')
+browser.find_element_by_id('u').send_keys('3451918377')
+browser.find_element_by_id('p').send_keys('password')
 # browser.save_screenshot('qq2.png')
 # # 获取登录按钮的id，点击
 time.sleep(1)
@@ -39,12 +39,14 @@ slidepic=browser.find_element_by_id('tcaptcha_drag_button')
 #print(slidepic)
 xylocation=browser.find_element_by_id('tcaptcha_drag_button').location
 print("x="+str(xylocation['x'])+"  y="+str(xylocation['y']))
-action.click_and_hold(slidepic).perform()
-action.move_to_element_with_offset(slidepic, 50, 0).perform()
-time.sleep(0.5)
-action.move_to_element_with_offset(slidepic, 60, 0).perform()
-time.sleep(0.8)
-action.move_to_element_with_offset(slidepic, 74, 0).release().perform()
+for i in range(1,100):
+ action.click_and_hold(slidepic).perform()
+ action.move_to_element_with_offset(slidepic, 50, 0).perform()
+ time.sleep(5)
+ action.move_to_element_with_offset(slidepic, 60, 0).perform()
+ time.sleep(3)
+ action.move_to_element_with_offset(slidepic, 150, 0).release().perform()
+ time.sleep(5)
 browser.save_screenshot('test.png')
 #action.release().perform()
 #action.move_to_element_with_offset(slidepic, 200, 0)
